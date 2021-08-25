@@ -69,7 +69,33 @@ class LoginScreen extends Component {
             mode="outlined"
             loading={this.state.loading}
             onPress={async () => {
-              this.props.navigation.navigate('Home');
+              this.setState({
+                loading: true,
+              });
+              axios
+                .post('http://localhost:3000/login', {
+                  email: this.state.email,
+                  password: this.state.password,
+                })
+                .then(async res => {
+                  console.log(res);
+                  await AsyncStorage.setItem('token', res.headers.authtoken);
+                  console.log(AsyncStorage.getItem('token'));
+                  alert('Successfully logged in!');
+                  this.setState({
+                    loading: true,
+                  });
+                  this.props.navigation.navigate('Home');
+                })
+                .catch(err => {
+                  console.error(err);
+                  alert(
+                    'Incorrect email or password. If you are sure it is correct, please check your internet connection.',
+                  );
+                  this.setState({
+                    loading: true,
+                  });
+                });
             }}
             color="black"
             contentStyle={{

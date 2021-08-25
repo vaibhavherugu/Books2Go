@@ -106,10 +106,83 @@ class SignUp extends Component {
             mode="outlined"
             loading={this.state.loading}
             onPress={async () => {
-              //this.setState({
-              //  loading: true,
-              //});
-              this.props.navigation.navigate('Home');
+              this.setState({
+                loading: true,
+              });
+              const re =
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              if (re.test(String(this.state.email).toLowerCase())) {
+                await axios
+                  .post('https://diversitylibrary.herokuapp.com/users', {
+                    fname: this.state.fname,
+                    lname: this.state.lname,
+                    email: this.state.email,
+                    password: this.state.password,
+                  })
+                  .then(async res => {
+                    console.log(res);
+                    if (
+                      res.data ===
+                      'Email already exists. Please choose a different email.'
+                    ) {
+                      alert(
+                        'Email already exists. Please choose a different email.',
+                      );
+                    }
+                    await axios
+                      .post('https://diversitylibrary.herokuapp.com/login', {
+                        email: this.state.email,
+                        password: this.state.password,
+                      })
+                      .then(async res => {
+                        console.log(res);
+                        await AsyncStorage.setItem(
+                          'token',
+                          res.data['auth-token'],
+                        );
+                        await AsyncStorage.setItem('userId', res.data.id);
+                        console.log(AsyncStorage.getItem('token'));
+                        alert('Successfully logged in!');
+                        if (this.state.goBack === true) {
+                          this.props.navigation.goBack(null);
+                        } else {
+                          this.props.navigation.navigate('Home');
+                        }
+                      })
+                      .catch(err => {
+                        console.error(err);
+                        this.setState({
+                          loading: false,
+                        });
+                        const password = this.state.password;
+                        if (password.length < 6) {
+                          alert('Password must be at least 6 characters long.');
+                        } else if (
+                          res.data ===
+                          'Email already exists. Please choose a different email.'
+                        ) {
+                          alert(
+                            'Email already exists. Please choose a different email.',
+                          );
+                        } else {
+                          alert('Something went wrong.');
+                        }
+                        console.log(res);
+                      });
+                  })
+                  .catch(err => {
+                    console.error(err);
+                    this.setState({
+                      loading: false,
+                    });
+                    alert('Something went wrong.');
+                  });
+              } else {
+                alert('Email is not valid.');
+                this.setState({
+                  loading: false,
+                });
+              }
             }}
             color="black"
             contentStyle={{
