@@ -31,7 +31,7 @@ class LendABook extends Component {
             Lend A Book
           </Text>
           <TextInput
-            value={this.state.email}
+            value={this.state.search}
             placeholder="Enter Book ISBN"
             autoCapitalize="none"
             selectionColor="black"
@@ -46,23 +46,6 @@ class LendABook extends Component {
             onChangeText={e => {
               this.setState({search: e});
             }}></TextInput>
-          <TextInput
-            value={this.state.email}
-            placeholder="Enter Address"
-            autoCapitalize="none"
-            selectionColor="black"
-            underlineColor="black"
-            underlineColorAndroid="black"
-            style={{
-              marginTop: 30,
-              fontSize: 20,
-              width: '75%',
-              height: 50,
-              marginBottom: 25,
-            }}
-            onChangeText={e => {
-              this.setState({search: e});
-            }}></TextInput>
 
           <Button
             //icon="login"
@@ -70,41 +53,52 @@ class LendABook extends Component {
             loading={this.state.loading}
             color="black"
             onPress={async () => {
-              /* await axios
-                .get(
-                  `https://www.googleapis.com/books/v1/volumes?q=isbn:${this.state.search}&key=AIzaSyAgm6PaQLLzeHaqyn16rgLXCDpprgOOZx0`,
-                )
-                .then(async res => {
-                  this.setState({
-                    results: res.data.items,
-                  });
-                  console.log(this.state.results[0]);
-                  await axios
-                    .post('https://diversitylibrary.herokuapp.com/books', {
-                      title: this.state.results[0].volumeInfo.title,
-                      author:
-                        this.state.results[0].volumeInfo.authors.toString(),
-                      cover:
-                        this.state.results[0].volumeInfo.imageLinks.thumbnail,
-                      checkedOut: false,
-                    })
-                    .then(res => {
-                      alert('Success! Book has been added.');
-                      console.log(res);
+              if (this.state.search == '' || undefined) {
+                alert(
+                  'That is not a valid ISBN code. If it is, check if you are connected to the internet and try again.',
+                );
+              } else {
+                await axios
+                  .get(
+                    `https://www.googleapis.com/books/v1/volumes?q=isbn:${this.state.search}&key=AIzaSyBfxsX-UepyGQaoLKJ96BN-PzlvP0ULcpQ`,
+                  )
+                  .then(async res => {
+                    this.setState({
+                      results: res.data.items,
                     });
-                })
-                .catch(err => {
-                  console.log(err);
-                  alert(
-                    'That is not a valid ISBN code. If it is, check if you are connected to the internet and try again.',
-                  );
-                }); */
+                    console.log(this.state.results[0]);
+                    console.log(this.props.route.params.email, 'props');
+                    await axios
+                      .post('http://localhost:3000/books', {
+                        title: this.state.results[0].volumeInfo.title,
+                        author:
+                          this.state.results[0].volumeInfo.authors.toString(),
+                        cover:
+                          this.state.results[0].volumeInfo.imageLinks.thumbnail,
+                        checkedOut: false,
+                        lenderEmail: this.props.route.params.email,
+                      })
+                      .then(res => {
+                        alert('Success! Book has been added.');
+                        console.log(res);
+                      });
+                  })
+                  .catch(err => {
+                    console.log(err);
+                    alert(
+                      'That is not a valid ISBN code. If it is, check if you are connected to the internet and try again.',
+                    );
+                  });
+              }
             }}
             contentStyle={{
               width: 175,
               height: 50,
               justifyContent: 'center',
               alignItems: 'center',
+            }}
+            style={{
+              marginTop: 30,
             }}>
             Add The Book
           </Button>

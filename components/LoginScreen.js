@@ -83,9 +83,11 @@ class LoginScreen extends Component {
                   console.log(AsyncStorage.getItem('token'));
                   alert('Successfully logged in!');
                   this.setState({
-                    loading: true,
+                    loading: false,
                   });
-                  this.props.navigation.navigate('Home');
+                  this.props.navigation.navigate('Router', {
+                    email: this.state.email,
+                  });
                 })
                 .catch(err => {
                   console.error(err);
@@ -93,7 +95,7 @@ class LoginScreen extends Component {
                     'Incorrect email or password. If you are sure it is correct, please check your internet connection.',
                   );
                   this.setState({
-                    loading: true,
+                    loading: false,
                   });
                 });
             }}

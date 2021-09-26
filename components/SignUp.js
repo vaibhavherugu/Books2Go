@@ -23,6 +23,8 @@ class SignUp extends Component {
       goBack: false,
       fname: '',
       lname: '',
+      address: '',
+      phone_number: '',
     };
   }
   render() {
@@ -95,11 +97,43 @@ class SignUp extends Component {
               marginTop: 30,
               fontSize: 20,
               width: '75%',
-              marginBottom: 50,
               height: 50,
             }}
             onChangeText={e => {
               this.setState({password: e});
+            }}></TextInput>
+          <TextInput
+            value={this.state.address}
+            placeholder="Address"
+            autoCapitalize="none"
+            selectionColor="black"
+            underlineColor="black"
+            underlineColorAndroid="black"
+            style={{
+              marginTop: 30,
+              fontSize: 20,
+              width: '75%',
+              height: 50,
+            }}
+            onChangeText={e => {
+              this.setState({address: e});
+            }}></TextInput>
+          <TextInput
+            value={this.state.phone_number}
+            placeholder="Phone Number"
+            autoCapitalize="none"
+            selectionColor="black"
+            underlineColor="black"
+            underlineColorAndroid="black"
+            style={{
+              marginTop: 30,
+              fontSize: 20,
+              width: '75%',
+              marginBottom: 50,
+              height: 50,
+            }}
+            onChangeText={e => {
+              this.setState({phone_number: e});
             }}></TextInput>
           <Button
             icon="login"
@@ -113,11 +147,13 @@ class SignUp extends Component {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
               if (re.test(String(this.state.email).toLowerCase())) {
                 await axios
-                  .post('https://diversitylibrary.herokuapp.com/users', {
+                  .post('http://localhost:3000/register', {
                     fname: this.state.fname,
                     lname: this.state.lname,
                     email: this.state.email,
                     password: this.state.password,
+                    address: this.state.address,
+                    phone_number: this.state.phone_number,
                   })
                   .then(async res => {
                     console.log(res);
@@ -129,8 +165,8 @@ class SignUp extends Component {
                         'Email already exists. Please choose a different email.',
                       );
                     }
-                    await axios
-                      .post('https://diversitylibrary.herokuapp.com/login', {
+                    axios
+                      .post('http://localhost:3000/login', {
                         email: this.state.email,
                         password: this.state.password,
                       })
@@ -138,22 +174,21 @@ class SignUp extends Component {
                         console.log(res);
                         await AsyncStorage.setItem(
                           'token',
-                          res.data['auth-token'],
+                          res.headers.authtoken,
                         );
-                        await AsyncStorage.setItem('userId', res.data.id);
                         console.log(AsyncStorage.getItem('token'));
                         alert('Successfully logged in!');
-                        if (this.state.goBack === true) {
-                          this.props.navigation.goBack(null);
-                        } else {
-                          this.props.navigation.navigate('Home');
-                        }
+                        this.setState({
+                          loading: false,
+                        });
+                        this.props.navigation.navigate('Home');
                       })
                       .catch(err => {
                         console.error(err);
                         this.setState({
                           loading: false,
                         });
+
                         const password = this.state.password;
                         if (password.length < 6) {
                           alert('Password must be at least 6 characters long.');

@@ -41,7 +41,10 @@ class HomeScreen extends Component {
               alignItems: 'center',
             }}
             onPress={() => {
-              this.props.navigation.navigate('Lend a Book');
+              console.log(this.props.route.params.email);
+              this.props.navigation.navigate('Lend a Book', {
+                email: this.props.route.params.email,
+              });
             }}>
             Lend a Book
           </Button>
@@ -55,7 +58,7 @@ class HomeScreen extends Component {
               alignItems: 'center',
             }}
             onPress={() => {
-              this.props.navigation.navigate('Search');
+              this.props.navigation.navigate('Home');
             }}>
             Search for Books
           </Button>
