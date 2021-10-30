@@ -67,7 +67,7 @@ class LendABook extends Component {
                       results: res.data.items,
                     });
                     console.log(this.state.results[0]);
-                    console.log(this.props.route.params.email, 'props');
+                    console.log('this.props.route.params.email', 'props');
                     await axios
                       .post('http://localhost:3000/books', {
                         title: this.state.results[0].volumeInfo.title,
@@ -76,7 +76,7 @@ class LendABook extends Component {
                         cover:
                           this.state.results[0].volumeInfo.imageLinks.thumbnail,
                         checkedOut: false,
-                        lenderEmail: this.props.route.params.email,
+                        lenderEmail: 'Tomjames@gmail.com',
                       })
                       .then(res => {
                         alert('Success! Book has been added.');

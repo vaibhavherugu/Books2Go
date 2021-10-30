@@ -22,6 +22,7 @@ class LoginScreen extends Component {
       goBack: false,
     };
   }
+
   render() {
     return (
       <ScrollView style={{backgroundColor: '#fff'}}>
@@ -85,7 +86,7 @@ class LoginScreen extends Component {
                   this.setState({
                     loading: false,
                   });
-                  this.props.navigation.navigate('Router', {
+                  this.props.navigation.navigate('Home', {
                     email: this.state.email,
                   });
                 })

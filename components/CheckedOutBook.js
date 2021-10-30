@@ -13,23 +13,24 @@ import {Button} from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
-class Book extends Component {
+class CheckedOutBook extends Component {
   componentDidMount() {
     console.log(this.props.route.params.image, 'afiasiuhsdiufhsidufhishd');
     console.log(this.props.route.params.checkedOut);
-    if (this.props.route.params.checkedOut === true) {
-      alert(
-        'This book is not available. It has been checked out already. If you are sure it has been checked back in, close the app and retry.',
-      );
+    if (this.props.route.params.checkedOut === false) {
+      alert("You can't check this book back in: it hasn't been checked out!");
       this.props.navigation.navigate('Home');
     } else {
       axios
         .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
         .then(res => {
           console.log('dsaadsdsa', res.data);
-          if (res.data.checkedOut) {
+          if (
+            res.data.checkedOut === false ||
+            res.data.checkedOut === undefined
+          ) {
             alert(
-              'This book is not available. It has been checked out already. If you are sure it has been checked back in, close the app and retry.',
+              "You can't check this book back in: it hasn't been checked out!",
             );
             this.props.navigation.navigate('Home');
           }
@@ -52,24 +53,28 @@ class Book extends Component {
       ) {
         this.props.navigation.navigate('Login', {bookLogin: true});
       } else {
-        if (this.props.route.params.checkedOut === true) {
+        if (this.props.route.params.checkedOut === false) {
           alert(
-            'This book is not available. It has been checked out already. If you are sure it has been checked back in, close the app and retry.',
+            "This book cannot be checked back in: it hasn't been checked out!",
           );
           this.props.navigation.navigate('Home');
           console.log('bye');
-          checkedOutBook = true;
+          checkedOutBook = false;
           this.props.navigation.navigate('Home');
-        } else if (this.props.route.params.checkedOut === false) {
+        } else if (this.props.route.params.checkedOut === true) {
           await axios
             .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
             .then(res => {
-              if (res.data.checkedOut) {
+              console.log(res.data.checkedOut);
+              if (
+                res.data.checkedOut === undefined ||
+                res.data.checkedOut === false
+              ) {
                 alert(
-                  'This book is not available. It has been checked out already. If you are sure it has been checked back in, close the app and retry.',
+                  "This book cannot be checked back in: it hasn't been checked out!",
                 );
                 console.log('hi');
-                checkedOutBook = true;
+                checkedOutBook = false;
                 this.props.navigation.navigate('Home');
               }
             })
@@ -78,61 +83,31 @@ class Book extends Component {
               console.log(err);
             });
         }
-        if (checkedOutBook === false) {
-          const userId = await AsyncStorage.getItem('userId');
-          var quota = false;
-          /*await axios
-            .get(`http://localhost:3000/users/userid/${userId}`)
-            .then(res => {
-              if (Number(res.data.checkedOutBooks.length) > 5) {
-                quota = true;
-              }
-            })
-            .catch(err => {
-              alert('Error, do you have an internet connection?');
-              console.log(err, 'err internet');
-            });*/
-          //if (quota === false) {
-          axios
-            .patch(
-              `http://localhost:3000/books/id/${this.props.route.params.id}`,
-              {
-                checkedOut: true,
-              },
-            )
-            .then(res => {
-              console.log(res);
-            })
-            .catch(err => {
-              console.log(err, 'smw');
-              alert('Something went wrong. Please try again.');
-            });
-          /*axios
-            .patch(`http://localhost:3000/users/${userId}`, {
-              checkedOutBooks: this.props.route.params.id,
-            })
-            .then(res => {
-              console.log(
-                res,
-                'ressdfnsdufosjdfosdfosdfosjdfoijsdofjsoidfjsoidjfosidjfoisdjfoisjdoifjsodjfsodjfsdjfosjdfoisj',
-              );
-              alert(res);
-            })
-            .catch(err => {
-              console.log(err, 'smw');
-              alert('Something went wrong. Please try again.');
-            });*/
-          alert('Success! Book has been checked out.');
-          this.props.navigation.navigate('Home');
-        } else if (quota) {
-          alert(
-            'Sorry, you have already reached a maximum quota of checked out books.',
-          );
-          this.props.navigation.navigate('Home');
-        }
+        console.log('hi');
+        const userId = await AsyncStorage.getItem('userId');
+        var quota = false;
+
+        await axios
+          .patch(
+            `http://localhost:3000/books/id/${this.props.route.params.id}`,
+            {
+              checkedOut: false,
+            },
+          )
+          .then(res => {
+            console.log(res, 'resres');
+          })
+          .catch(err => {
+            console.log(err, 'smw');
+            alert('Something went wrong. Please try again.');
+          });
+
+        alert('Success! Book has been checked back in.');
+        this.props.navigation.navigate('Home');
       }
-      // }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   render() {
     var url = this.props.route.params.image;
@@ -197,7 +172,7 @@ class Book extends Component {
               flex: 1,
             }}
             onPress={this.onPress}>
-            Check Out
+            Check Back In
           </Button>
           <Text></Text>
           <Text></Text>
@@ -207,4 +182,4 @@ class Book extends Component {
   }
 }
 
-export default Book;
+export default CheckedOutBook;

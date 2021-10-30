@@ -156,7 +156,7 @@ class SignUp extends Component {
                     phone_number: this.state.phone_number,
                   })
                   .then(async res => {
-                    console.log(res);
+                    console.log('ssa');
                     if (
                       res.data ===
                       'Email already exists. Please choose a different email.'
@@ -210,7 +210,7 @@ class SignUp extends Component {
                     this.setState({
                       loading: false,
                     });
-                    alert('Something went wrong.');
+                    alert('Something went wrong!');
                   });
               } else {
                 alert('Email is not valid.');

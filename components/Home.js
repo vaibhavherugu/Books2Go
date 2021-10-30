@@ -8,6 +8,7 @@ import {
   BackHandler,
   Image,
   ViewBase,
+  StatusBar,
 } from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {Button} from 'react-native-paper';
@@ -106,14 +107,24 @@ class HomeScreen extends Component {
           resizeMode: 'cover',
           justifyContent: 'center',
         }}
-        onPress={() => {
-          this.props.navigation.navigate('Book', {
-            image: item.cover,
-            title: item.title,
-            author: item.author,
-            id: item._id,
-            checkedOut: item.checkedOut,
-          });
+        onPress={async () => {
+          const tokenCheck = await AsyncStorage.getItem('token');
+          if (
+            tokenCheck === undefined ||
+            tokenCheck === null ||
+            tokenCheck === ''
+          ) {
+            alert('You must be logged in to check out a book.');
+            this.props.navigation.navigate('Login');
+          } else {
+            this.props.navigation.navigate('Book', {
+              image: item.cover,
+              title: item.title,
+              author: item.author,
+              id: item._id,
+              checkedOut: item.checkedOut,
+            });
+          }
         }}>
         <Image
           source={{uri: url}}
@@ -164,6 +175,7 @@ class HomeScreen extends Component {
       // </View>
     );
   };
+
   render() {
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -203,7 +215,7 @@ class HomeScreen extends Component {
                   lineDisplay2: 'none',
                 });
               }}>
-              <Text>Books</Text>
+              {/*<Text>Books</Text>
               <View
                 style={{
                   width: '100%',
@@ -213,8 +225,9 @@ class HomeScreen extends Component {
                   borderBottomRightRadius: 5,
                   display: this.state.lineDisplay,
                 }}></View>
-            </TouchableOpacity>
-            {/* <TouchableOpacity
+              </TouchableOpacity>
+              */}
+              {/* <TouchableOpacity
               style={styles.menutext}
               onPress={() => {
                 LayoutAnimation.spring();
@@ -234,6 +247,7 @@ class HomeScreen extends Component {
                   display: this.state.lineDisplay2,
                 }}></View>
             </TouchableOpacity> */}
+            </TouchableOpacity>
           </View>
           <Carousel
             layout={'default'}
