@@ -88,10 +88,13 @@ const Screens = ({navigation, style}) => {
                     }}
                     onSubmitEditing={() => {
                       axios
-                        .post('https://localhost:3000/books/search', {
-                          query: searchVal,
-                          lenderEmail: 'test@test.com',
-                        })
+                        .post(
+                          'https://books2gobackend.herokuapp.com//books/search',
+                          {
+                            query: searchVal,
+                            lenderEmail: null,
+                          },
+                        )
                         .then(res => {
                           navigation.navigate('Search', {
                             book: res.data.results.map(obj => obj),
@@ -119,7 +122,7 @@ const Screens = ({navigation, style}) => {
           test="test"
           {...navigation}></Stack.Screen>
         <Stack.Screen
-          name="Checked Out Book"
+          name="Checked Out"
           component={CheckedOutBook}
           {...navigation}></Stack.Screen>
         <Stack.Screen
@@ -139,7 +142,7 @@ const Screens = ({navigation, style}) => {
           component={SignUp}
           {...navigation}></Stack.Screen>
         <Stack.Screen
-          name="CheckIn"
+          name="Return A Book"
           component={CheckIn}
           {...navigation}></Stack.Screen>
         <Stack.Screen
@@ -185,8 +188,8 @@ const DrawerContent = props => {
           /> */}
           <Icon6 name="ios-library" size={60}></Icon6>
           <Text></Text>
-          <Text title>Diversity Library</Text>
-          <Text size={9}>contact@diversitylibrary.com</Text>
+          <Text title>Books2Go</Text>
+          <Text size={9}>Contact Us: vherugu@gmail.com</Text>
         </Block>
         <DrawerItem
           label="Home"
@@ -216,11 +219,23 @@ const DrawerContent = props => {
         <DrawerItem
           label="Lend A Book"
           labelStyle={{marginLeft: -16}}
-          onPress={() => props.navigation.navigate('Lend a Book')}
+          onPress={async () => {
+            const tokenCheck = await AsyncStorage.getItem('token');
+            if (
+              tokenCheck === undefined ||
+              tokenCheck === null ||
+              tokenCheck === ''
+            ) {
+              alert('You must be logged in to lend a book.');
+              props.navigation.navigate('Login');
+            } else {
+              props.navigation.navigate('Lend a Book');
+            }
+          }}
           icon={() => <Icon name="book" size={16} />}
         />
         <DrawerItem
-          label="Check A Book Back In"
+          label="Return A Book"
           labelStyle={{marginLeft: -16}}
           onPress={async () => {
             const tokenCheck = await AsyncStorage.getItem('token');
@@ -229,10 +244,10 @@ const DrawerContent = props => {
               tokenCheck === null ||
               tokenCheck === ''
             ) {
-              alert('You must be logged in to check a book back in.');
+              alert('You must be logged in to return a book.');
               props.navigation.navigate('Login');
             } else {
-              props.navigation.navigate('CheckIn');
+              props.navigation.navigate('Return A Book');
             }
           }}
           icon={() => <Icon name="bookmark" color="black" size={16} />}
@@ -253,6 +268,7 @@ const DrawerContent = props => {
           labelStyle={{marginLeft: -16}}
           onPress={() => {
             AsyncStorage.removeItem('token');
+            AsyncStorage.removeItem('lenderEmail');
             props.navigation.navigate('Login', {
               loggedOut: label,
             });

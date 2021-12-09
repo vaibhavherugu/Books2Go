@@ -14,6 +14,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 class Book extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lenderEmail: '',
+    };
+  }
   componentDidMount() {
     console.log(this.props.route.params.image, 'afiasiuhsdiufhsidufhishd');
     console.log(this.props.route.params.checkedOut);
@@ -24,9 +30,14 @@ class Book extends Component {
       this.props.navigation.navigate('Home');
     } else {
       axios
-        .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
+        .get(
+          `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+        )
         .then(res => {
           console.log('dsaadsdsa', res.data);
+          this.setState({
+            lenderEmail: res.data.lenderEmail,
+          });
           if (res.data.checkedOut) {
             alert(
               'This book is not available. It has been checked out already. If you are sure it has been checked back in, close the app and retry.',
@@ -62,7 +73,9 @@ class Book extends Component {
           this.props.navigation.navigate('Home');
         } else if (this.props.route.params.checkedOut === false) {
           await axios
-            .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
+            .get(
+              `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+            )
             .then(res => {
               if (res.data.checkedOut) {
                 alert(
@@ -82,7 +95,7 @@ class Book extends Component {
           const userId = await AsyncStorage.getItem('userId');
           var quota = false;
           /*await axios
-            .get(`http://localhost:3000/users/userid/${userId}`)
+            .get(`https://books2gobackend.herokuapp.com//users/userid/${userId}`)
             .then(res => {
               if (Number(res.data.checkedOutBooks.length) > 5) {
                 quota = true;
@@ -95,7 +108,7 @@ class Book extends Component {
           //if (quota === false) {
           axios
             .patch(
-              `http://localhost:3000/books/id/${this.props.route.params.id}`,
+              `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
               {
                 checkedOut: true,
               },
@@ -108,7 +121,7 @@ class Book extends Component {
               alert('Something went wrong. Please try again.');
             });
           /*axios
-            .patch(`http://localhost:3000/users/${userId}`, {
+            .patch(`https://books2gobackend.herokuapp.com//users/${userId}`, {
               checkedOutBooks: this.props.route.params.id,
             })
             .then(res => {
@@ -138,13 +151,14 @@ class Book extends Component {
     var url = this.props.route.params.image;
     url = url.replace(/^http:\/\//i, 'https://');
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: '#ffffff'}}>
         <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
             flex: 1,
             marginTop: 50,
+            backgroundColor: '#ffffff',
           }}>
           <Image
             width={Dimensions.get('window').width / 1.5}
@@ -186,6 +200,10 @@ class Book extends Component {
             alignItems: 'center',
             flex: 1,
           }}>
+          <Text>Email to Contact the Lender: </Text>
+          <Text>{this.state.lenderEmail}</Text>
+          <Text></Text>
+          <Text></Text>
           <Button
             icon="arrow-left-bold"
             mode="filled"

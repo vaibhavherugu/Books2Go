@@ -11,6 +11,7 @@ import {TextInput} from 'react-native-paper';
 import {Button} from 'react-native-paper';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {CommonActions, useNavigation} from '@react-navigation/native';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class LoginScreen extends Component {
                 loading: true,
               });
               axios
-                .post('http://localhost:3000/login', {
+                .post('https://books2gobackend.herokuapp.com//login', {
                   email: this.state.email,
                   password: this.state.password,
                 })
@@ -82,7 +83,10 @@ class LoginScreen extends Component {
                   console.log(res);
                   await AsyncStorage.setItem('token', res.headers.authtoken);
                   console.log(AsyncStorage.getItem('token'));
-                  alert('Successfully logged in!');
+                  console.log(this.state.email);
+                  await AsyncStorage.setItem('lenderEmail', this.state.email);
+                  const lenderEmail = AsyncStorage.getItem('lenderEmail');
+                  console.log(lenderEmail._W);
                   this.setState({
                     loading: false,
                   });

@@ -31,7 +31,7 @@ class HomeScreen extends Component {
   async componentDidMount() {
     var errorInternet = 0;
     axios
-      .get('http://localhost:3000/books/pagination', {
+      .get('https://books2gobackend.herokuapp.com//books/pagination', {
         headers: {
           page: 0,
         },
@@ -47,7 +47,7 @@ class HomeScreen extends Component {
         console.error(err);
       });
     axios
-      .get('http://localhost:3000/books/pagination', {
+      .get('https://books2gobackend.herokuapp.com//books/pagination', {
         headers: {
           page: 1,
         },
@@ -63,7 +63,7 @@ class HomeScreen extends Component {
         console.error(err);
       });
     axios
-      .get('http://localhost:3000/books/pagination', {
+      .get('https://books2gobackend.herokuapp.com//books/pagination', {
         headers: {
           page: 2,
         },
@@ -187,12 +187,12 @@ class HomeScreen extends Component {
         <ScrollView
           style={styles.scrollView}
           contentContainerStyle={{justifyContent: 'center'}}>
-          <View style={{height: 260, zIndex: 0}}>
+          <View style={{height: 260, zIndex: 0, justifyContent: 'center'}}>
             <Carousel
               layout={'default'}
               ref={ref => (this.carousel = ref)}
               data={this.state.coverImage}
-              sliderWidth={375}
+              sliderWidth={325}
               itemWidth={250}
               sliderHeight={100}
               renderItem={this._renderItem}
@@ -205,7 +205,7 @@ class HomeScreen extends Component {
           <Text></Text>
           <Text></Text>
           <Text></Text>
-          <View style={styles.menu}>
+          {/* <View style={styles.menu}>
             <TouchableOpacity
               style={styles.menutext}
               onPress={() => {
@@ -215,7 +215,7 @@ class HomeScreen extends Component {
                   lineDisplay2: 'none',
                 });
               }}>
-              {/*<Text>Books</Text>
+              <Text>Books</Text>
               <View
                 style={{
                   width: '100%',
@@ -225,9 +225,8 @@ class HomeScreen extends Component {
                   borderBottomRightRadius: 5,
                   display: this.state.lineDisplay,
                 }}></View>
-              </TouchableOpacity>
-              */}
-              {/* <TouchableOpacity
+            </TouchableOpacity>
+            <TouchableOpacity
               style={styles.menutext}
               onPress={() => {
                 LayoutAnimation.spring();
@@ -246,9 +245,8 @@ class HomeScreen extends Component {
                   borderBottomRightRadius: 5,
                   display: this.state.lineDisplay2,
                 }}></View>
-            </TouchableOpacity> */}
             </TouchableOpacity>
-          </View>
+          </View> */}
           <Carousel
             layout={'default'}
             ref={ref => (this.carousel = ref)}

@@ -24,6 +24,7 @@ class CheckIn extends Component {
       results: [],
     };
   }
+
   async componentDidMount() {
     var coverImageVar = res.data.results.map(obj => obj);
 
@@ -32,14 +33,17 @@ class CheckIn extends Component {
     });
     console.log(this.state.coverImage);
   }
+
   render() {
+    const lenderEmail = AsyncStorage.getItem('lenderEmail');
+
     return (
       <ScrollView style={{backgroundColor: '#fff'}}>
         <Text></Text>
         <Text></Text>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <Text style={{fontSize: 30, marginTop: 20, textAlign: 'center'}}>
-            Search
+            Return a Book
           </Text>
           <TextInput
             //value={this.state.email}
@@ -64,9 +68,9 @@ class CheckIn extends Component {
             color="black"
             onPress={() => {
               axios
-                .post('http://localhost:3000/books/search', {
+                .post('https://books2gobackend.herokuapp.com//books/search', {
                   query: this.state.search,
-                  lenderEmail: 'test@test.com',
+                  lenderEmail: lenderEmail._W,
                 })
                 .then(res => {
                   console.log(res.data.results.map(obj => obj)),
@@ -94,7 +98,7 @@ class CheckIn extends Component {
             {this.state.results.map(result => (
               <TouchableOpacity
                 onPress={() => {
-                  this.props.navigation.navigate('Checked Out Book', {
+                  this.props.navigation.navigate('Checked Out', {
                     image: result.cover,
                     title: result.title,
                     author: result.author,

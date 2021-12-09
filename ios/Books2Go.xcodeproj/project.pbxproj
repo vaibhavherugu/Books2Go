@@ -13,21 +13,21 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		255E7FA3D4D86B45A10F3B9E /* libPods-Books2Go.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9154F3DFD98C0465D131FCF8 /* libPods-Books2Go.a */; };
 		30A7E2F11DC14EE39C1C3937 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A94B6D15C484B13B10C4334 /* Octicons.ttf */; };
 		30CDE5E2426F4A70AB9D6097 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A33A2DD5414DF7A44454FF /* FontAwesome5_Regular.ttf */; };
 		3BEFCC6AA9A947C0AC8C2039 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFDEC702D254CE89E97039C /* SimpleLineIcons.ttf */; };
 		3C3F8F0EA435457D8630D523 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1524FE27D1424E599ABD166B /* Zocial.ttf */; };
 		6BA26E4603BB4C9D8A7C0E8D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 344283D45DEC44C7938FAACB /* Foundation.ttf */; };
+		6D09E7A73CD712974B4B86B2 /* libPods-Books2Go.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AD44536ED946C29822DFE8 /* libPods-Books2Go.a */; };
 		726F32AA8F644AF2838228BD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 879BE5F67AE745C186A8937E /* MaterialIcons.ttf */; };
 		7F4D29738289402BAADCC0C1 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 704972E3DF514EBE9C36B1B1 /* FontAwesome5_Brands.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8909E68D6D724E738CE7F549 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3482279297D04E70A64FADC7 /* Ionicons.ttf */; };
 		8C01319275F648D5A145B895 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93B7F5DE57474B3681AE0C98 /* FontAwesome.ttf */; };
+		8EE69624A9494DE9208AC759 /* libPods-Books2Go-Books2GoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B702C7A206A0EF7C599FF53A /* libPods-Books2Go-Books2GoTests.a */; };
 		9BE1AC9E72FA4C1BB821A79B /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A5B07DECC494A91DF4D77 /* Entypo.ttf */; };
 		AB9181FC66EC41FBADAA32F2 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A62CA5CE5F440A3A6631903 /* MaterialCommunityIcons.ttf */; };
 		CE0BEE78B88A4D339E9A533D /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC97CCCF694F4E7A8169ADF6 /* FontAwesome5_Solid.ttf */; };
-		E19D19EFB6CB478BD91034BF /* libPods-Books2Go-Books2GoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D012E5F8B11D09CED01204A5 /* libPods-Books2Go-Books2GoTests.a */; };
 		F61011303FC24A129C0A8121 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE7BE4BE12B0414A90CE3CE5 /* Feather.ttf */; };
 		F9C5B988AA1F44CDAFCC6194 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4837C7F6B04E68BC676A5D /* AntDesign.ttf */; };
 /* End PBXBuildFile section */
@@ -53,29 +53,29 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Books2Go/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Books2Go/main.m; sourceTree = "<group>"; };
 		1524FE27D1424E599ABD166B /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		15301DC992E847222B6EC332 /* Pods-Books2Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go.debug.xcconfig"; path = "Target Support Files/Pods-Books2Go/Pods-Books2Go.debug.xcconfig"; sourceTree = "<group>"; };
 		2FFDEC702D254CE89E97039C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		3380C9DA9ACB9CEDBF2751AD /* Pods-Books2Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go.debug.xcconfig"; path = "Target Support Files/Pods-Books2Go/Pods-Books2Go.debug.xcconfig"; sourceTree = "<group>"; };
 		344283D45DEC44C7938FAACB /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		3482279297D04E70A64FADC7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		4B39E662272D1169970F3B39 /* Pods-Books2Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go.release.xcconfig"; path = "Target Support Files/Pods-Books2Go/Pods-Books2Go.release.xcconfig"; sourceTree = "<group>"; };
 		5B0A5B07DECC494A91DF4D77 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		5D2F36E7AC5DC927C8CE4DB4 /* Pods-Books2Go-Books2GoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go-Books2GoTests.release.xcconfig"; path = "Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests.release.xcconfig"; sourceTree = "<group>"; };
+		613FDE824CC08D17D295C50C /* Pods-Books2Go-Books2GoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go-Books2GoTests.release.xcconfig"; path = "Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests.release.xcconfig"; sourceTree = "<group>"; };
+		6593374F11BC6628F980F52E /* Pods-Books2Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go.release.xcconfig"; path = "Target Support Files/Pods-Books2Go/Pods-Books2Go.release.xcconfig"; sourceTree = "<group>"; };
 		704972E3DF514EBE9C36B1B1 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Books2Go/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		879BE5F67AE745C186A8937E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		8A94B6D15C484B13B10C4334 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		905D111EEF2F4585B0B6DD60 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		9154F3DFD98C0465D131FCF8 /* libPods-Books2Go.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Books2Go.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91AD44536ED946C29822DFE8 /* libPods-Books2Go.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Books2Go.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B7F5DE57474B3681AE0C98 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		9A62CA5CE5F440A3A6631903 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		9EEA46BFCDED45138A7C3B07 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		A4DD78EF651CF5DC15576DA5 /* Pods-Books2Go-Books2GoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go-Books2GoTests.debug.xcconfig"; path = "Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7BE4BE12B0414A90CE3CE5 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		D012E5F8B11D09CED01204A5 /* libPods-Books2Go-Books2GoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Books2Go-Books2GoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B702C7A206A0EF7C599FF53A /* libPods-Books2Go-Books2GoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Books2Go-Books2GoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A33A2DD5414DF7A44454FF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		DC97CCCF694F4E7A8169ADF6 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		EC4837C7F6B04E68BC676A5D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F8E999270F407365165057DF /* Pods-Books2Go-Books2GoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books2Go-Books2GoTests.debug.xcconfig"; path = "Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19D19EFB6CB478BD91034BF /* libPods-Books2Go-Books2GoTests.a in Frameworks */,
+				8EE69624A9494DE9208AC759 /* libPods-Books2Go-Books2GoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				255E7FA3D4D86B45A10F3B9E /* libPods-Books2Go.a in Frameworks */,
+				6D09E7A73CD712974B4B86B2 /* libPods-Books2Go.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				9154F3DFD98C0465D131FCF8 /* libPods-Books2Go.a */,
-				D012E5F8B11D09CED01204A5 /* libPods-Books2Go-Books2GoTests.a */,
+				91AD44536ED946C29822DFE8 /* libPods-Books2Go.a */,
+				B702C7A206A0EF7C599FF53A /* libPods-Books2Go-Books2GoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,10 +196,10 @@
 		FA812890B239404BB450B15E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15301DC992E847222B6EC332 /* Pods-Books2Go.debug.xcconfig */,
-				4B39E662272D1169970F3B39 /* Pods-Books2Go.release.xcconfig */,
-				A4DD78EF651CF5DC15576DA5 /* Pods-Books2Go-Books2GoTests.debug.xcconfig */,
-				5D2F36E7AC5DC927C8CE4DB4 /* Pods-Books2Go-Books2GoTests.release.xcconfig */,
+				3380C9DA9ACB9CEDBF2751AD /* Pods-Books2Go.debug.xcconfig */,
+				6593374F11BC6628F980F52E /* Pods-Books2Go.release.xcconfig */,
+				F8E999270F407365165057DF /* Pods-Books2Go-Books2GoTests.debug.xcconfig */,
+				613FDE824CC08D17D295C50C /* Pods-Books2Go-Books2GoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -211,12 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Books2GoTests" */;
 			buildPhases = (
-				9E722334DA6E308A88A6D7A2 /* [CP] Check Pods Manifest.lock */,
+				F600D48CB60CB5D5B31E5A06 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				31D48FBCD730DAE00B0DABDB /* [CP] Embed Pods Frameworks */,
-				A62634A1B6E21D89854DB553 /* [CP] Copy Pods Resources */,
+				5F766AB8829F5FF66CEF7CE5 /* [CP] Embed Pods Frameworks */,
+				F077018E618E68AB88F71BF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,14 +232,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Books2Go" */;
 			buildPhases = (
-				B808B603908AE070181AABC8 /* [CP] Check Pods Manifest.lock */,
+				747927515640356E22E2D651 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C06DB7BDDF887DAF9467C335 /* [CP] Embed Pods Frameworks */,
-				5DA30BC9D5D328DD9EE05FE7 /* [CP] Copy Pods Resources */,
+				02033FFFAB70AEA5087480E3 /* [CP] Embed Pods Frameworks */,
+				C56B6F2195EDC55A81766357 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,7 +336,22 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		31D48FBCD730DAE00B0DABDB /* [CP] Embed Pods Frameworks */ = {
+		02033FFFAB70AEA5087480E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go/Pods-Books2Go-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F766AB8829F5FF66CEF7CE5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,59 +366,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DA30BC9D5D328DD9EE05FE7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go/Pods-Books2Go-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E722334DA6E308A88A6D7A2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Books2Go-Books2GoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A62634A1B6E21D89854DB553 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B808B603908AE070181AABC8 /* [CP] Check Pods Manifest.lock */ = {
+		747927515640356E22E2D651 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,19 +388,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C06DB7BDDF887DAF9467C335 /* [CP] Embed Pods Frameworks */ = {
+		C56B6F2195EDC55A81766357 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go/Pods-Books2Go-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go/Pods-Books2Go-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F077018E618E68AB88F71BF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Books2Go-Books2GoTests/Pods-Books2Go-Books2GoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F600D48CB60CB5D5B31E5A06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Books2Go-Books2GoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -492,7 +492,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4DD78EF651CF5DC15576DA5 /* Pods-Books2Go-Books2GoTests.debug.xcconfig */;
+			baseConfigurationReference = F8E999270F407365165057DF /* Pods-Books2Go-Books2GoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -519,7 +519,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2F36E7AC5DC927C8CE4DB4 /* Pods-Books2Go-Books2GoTests.release.xcconfig */;
+			baseConfigurationReference = 613FDE824CC08D17D295C50C /* Pods-Books2Go-Books2GoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -543,7 +543,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15301DC992E847222B6EC332 /* Pods-Books2Go.debug.xcconfig */;
+			baseConfigurationReference = 3380C9DA9ACB9CEDBF2751AD /* Pods-Books2Go.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -551,6 +551,7 @@
 				DEVELOPMENT_TEAM = 2TR6ZGV2VJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Books2Go/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,13 +571,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B39E662272D1169970F3B39 /* Pods-Books2Go.release.xcconfig */;
+			baseConfigurationReference = 6593374F11BC6628F980F52E /* Pods-Books2Go.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TR6ZGV2VJ;
 				INFOPLIST_FILE = Books2Go/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

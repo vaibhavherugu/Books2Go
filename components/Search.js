@@ -38,6 +38,7 @@ class Search extends Component {
         contentContainerStyle={{
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundColor: '#ffffff',
         }}>
         {this.state.coverImage.map(book => (
           <TouchableOpacity

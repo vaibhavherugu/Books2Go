@@ -22,7 +22,9 @@ class CheckedOutBook extends Component {
       this.props.navigation.navigate('Home');
     } else {
       axios
-        .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
+        .get(
+          `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+        )
         .then(res => {
           console.log('dsaadsdsa', res.data);
           if (
@@ -63,7 +65,9 @@ class CheckedOutBook extends Component {
           this.props.navigation.navigate('Home');
         } else if (this.props.route.params.checkedOut === true) {
           await axios
-            .get(`http://localhost:3000/books/id/${this.props.route.params.id}`)
+            .get(
+              `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+            )
             .then(res => {
               console.log(res.data.checkedOut);
               if (
@@ -89,7 +93,7 @@ class CheckedOutBook extends Component {
 
         await axios
           .patch(
-            `http://localhost:3000/books/id/${this.props.route.params.id}`,
+            `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
             {
               checkedOut: false,
             },
