@@ -75,7 +75,7 @@ class LoginScreen extends Component {
                 loading: true,
               });
               axios
-                .post('https://books2gobackend.herokuapp.com//login', {
+                .post('https://books2gobackend.herokuapp.com/login', {
                   email: this.state.email,
                   password: this.state.password,
                 })

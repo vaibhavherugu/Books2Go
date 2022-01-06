@@ -147,7 +147,7 @@ class SignUp extends Component {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
               if (re.test(String(this.state.email).toLowerCase())) {
                 await axios
-                  .post('https://books2gobackend.herokuapp.com//register', {
+                  .post('https://books2gobackend.herokuapp.com/register', {
                     fname: this.state.fname,
                     lname: this.state.lname,
                     email: this.state.email,
@@ -166,7 +166,7 @@ class SignUp extends Component {
                       );
                     }
                     axios
-                      .post('https://books2gobackend.herokuapp.com//login', {
+                      .post('https://books2gobackend.herokuapp.com/login', {
                         email: this.state.email,
                         password: this.state.password,
                       })

@@ -68,7 +68,7 @@ class CheckIn extends Component {
             color="black"
             onPress={() => {
               axios
-                .post('https://books2gobackend.herokuapp.com//books/search', {
+                .post('https://books2gobackend.herokuapp.com/books/search', {
                   query: this.state.search,
                   lenderEmail: lenderEmail._W,
                 })

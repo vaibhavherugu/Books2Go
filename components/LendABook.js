@@ -11,6 +11,7 @@ import {TextInput} from 'react-native-paper';
 import {Button} from 'react-native-paper';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+const dotenv = require('dotenv');
 
 class LendABook extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class LendABook extends Component {
               } else {
                 await axios
                   .get(
-                    `https://www.googleapis.com/books/v1/volumes?q=isbn:${this.state.search}&key=AIzaSyBfxsX-UepyGQaoLKJ96BN-PzlvP0ULcpQ`,
+                    `https://www.googleapis.com/books/v1/volumes?q=isbn:${this.state.search}&key=${process.env.GOOGLE_API_KEY}`,
                   )
                   .then(async res => {
                     this.setState({
@@ -69,7 +70,7 @@ class LendABook extends Component {
                     console.log(this.state.results[0]);
                     console.log('this.props.route.params.email', 'props');
                     await axios
-                      .post('https://books2gobackend.herokuapp.com//books', {
+                      .post('https://books2gobackend.herokuapp.com/books', {
                         title: this.state.results[0].volumeInfo.title,
                         author:
                           this.state.results[0].volumeInfo.authors.toString(),

@@ -89,7 +89,7 @@ const Screens = ({navigation, style}) => {
                     onSubmitEditing={() => {
                       axios
                         .post(
-                          'https://books2gobackend.herokuapp.com//books/search',
+                          'https://books2gobackend.herokuapp.com/books/search',
                           {
                             query: searchVal,
                             lenderEmail: null,

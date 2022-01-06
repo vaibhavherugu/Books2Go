@@ -31,7 +31,7 @@ class Book extends Component {
     } else {
       axios
         .get(
-          `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+          `https://books2gobackend.herokuapp.com/books/id/${this.props.route.params.id}`,
         )
         .then(res => {
           console.log('dsaadsdsa', res.data);
@@ -74,7 +74,7 @@ class Book extends Component {
         } else if (this.props.route.params.checkedOut === false) {
           await axios
             .get(
-              `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+              `https://books2gobackend.herokuapp.com/books/id/${this.props.route.params.id}`,
             )
             .then(res => {
               if (res.data.checkedOut) {
@@ -95,7 +95,7 @@ class Book extends Component {
           const userId = await AsyncStorage.getItem('userId');
           var quota = false;
           /*await axios
-            .get(`https://books2gobackend.herokuapp.com//users/userid/${userId}`)
+            .get(`https://books2gobackend.herokuapp.com/users/userid/${userId}`)
             .then(res => {
               if (Number(res.data.checkedOutBooks.length) > 5) {
                 quota = true;
@@ -108,7 +108,7 @@ class Book extends Component {
           //if (quota === false) {
           axios
             .patch(
-              `https://books2gobackend.herokuapp.com//books/id/${this.props.route.params.id}`,
+              `https://books2gobackend.herokuapp.com/books/id/${this.props.route.params.id}`,
               {
                 checkedOut: true,
               },
@@ -121,7 +121,7 @@ class Book extends Component {
               alert('Something went wrong. Please try again.');
             });
           /*axios
-            .patch(`https://books2gobackend.herokuapp.com//users/${userId}`, {
+            .patch(`https://books2gobackend.herokuapp.com/users/${userId}`, {
               checkedOutBooks: this.props.route.params.id,
             })
             .then(res => {

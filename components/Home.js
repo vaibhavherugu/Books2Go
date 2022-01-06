@@ -31,7 +31,7 @@ class HomeScreen extends Component {
   async componentDidMount() {
     var errorInternet = 0;
     axios
-      .get('https://books2gobackend.herokuapp.com//books/pagination', {
+      .get('https://books2gobackend.herokuapp.com/books/pagination', {
         headers: {
           page: 0,
         },
@@ -47,7 +47,7 @@ class HomeScreen extends Component {
         console.error(err);
       });
     axios
-      .get('https://books2gobackend.herokuapp.com//books/pagination', {
+      .get('https://books2gobackend.herokuapp.com/books/pagination', {
         headers: {
           page: 1,
         },
@@ -63,7 +63,7 @@ class HomeScreen extends Component {
         console.error(err);
       });
     axios
-      .get('https://books2gobackend.herokuapp.com//books/pagination', {
+      .get('https://books2gobackend.herokuapp.com/books/pagination', {
         headers: {
           page: 2,
         },
